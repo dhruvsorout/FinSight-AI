@@ -138,6 +138,11 @@ For detailed API documentation and endpoint contracts, see
   (e.g. "which category did I spend the most on") are a work in progress
 - No automated test suite yet
 
+
+## More details:
+
+For a detailed security and architecture review of this project, see [docs/AUDIT.md](./docs/AUDIT.md).
+
 ## License
 
 This project is for portfolio/educational purposes.
