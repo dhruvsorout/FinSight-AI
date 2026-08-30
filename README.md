@@ -17,24 +17,13 @@ answers grounded in your real transaction data, not hallucinated by the AI.
 
 ## Architecture
 
-┌─────────────────────┐
-│ Frontend (Next.js) │
-└──────────┬───────────┘
-│
-v
-┌──────────────────────┐
-│ Node.js / Express │
-│ Auth + CRUD + │
-│ business logic │
-└────┬─────────────┬────┘
-│ │
-Prisma ORM Internal HTTP
-│ │
-v v
-┌──────────┐ ┌──────────────────┐
-│PostgreSQL│ │ FastAPI AI Service│
-│ (Neon) │ │ Gemini integration│
-└──────────┘ └──────────────────┘
+```mermaid
+graph TD
+    A[Frontend - Next.js] --> B[Node.js / Express API]
+    B --> C[(PostgreSQL - Neon)]
+    B --> D[FastAPI AI Service]
+    D --> E[Gemini API]
+```
 
 The Node/Express API is the single source of truth for all data. The FastAPI 
 service is stateless — it never touches the database directly. It receives 
@@ -54,17 +43,22 @@ unavailable or rate-limited, without the app going down.
 
 ## Project Structure
 
+## Project Structure
+
+```
 FinSight-AI/
 ├── backend/
-│ ├── apps/
-│ │ ├── api/ # Node.js/Express REST API
-│ │ └── ai-service/ # Python/FastAPI AI microservice
-│ ├── docker-compose.yml
-│ └── README.md # Backend-specific setup and API docs
-├── frontend/
-│ ├── src/
-│ └── README.md # Frontend-specific setup
-└── README.md # You are here
+│   ├── apps/
+│   │   ├── api/              # Node.js/Express REST API
+│   │   └── ai-service/       # Python/FastAPI AI microservice
+│   ├── docker-compose.yml
+│   └── README.md             # Backend-specific setup and API docs
+└── frontend/
+    ├── src/
+    └── README.md             # Frontend-specific setup
+
+README.md                     # You are here
+```
 
 
 ## Getting Started
