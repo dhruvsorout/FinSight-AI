@@ -1,0 +1,19 @@
+{
+  "name": "finsight-ai",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/api"
+  ],
+  "scripts": {
+    "dev:api": "npm --workspace apps/api run dev",
+    "build:api": "npm --workspace apps/api run build",
+    "seed:api": "npm --workspace apps/api run prisma:seed"
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19"
+  }
+}

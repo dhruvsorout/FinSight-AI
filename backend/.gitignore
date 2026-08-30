@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+apps/api/generated
+apps/api/prisma/dev.db
+apps/api/prisma/dev.db-journal
+coverage
+uploads
+

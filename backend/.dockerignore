@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+.git
+.venv
+__pycache__
+dist
+apps/api/dist
+apps/ai-service/__pycache__
+coverage
